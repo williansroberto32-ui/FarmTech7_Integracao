@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "author": "Willians Roberto da Silva",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -4.76, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -95.7, "left": -63, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 54.2,
+      "left": 153.6,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 102.2,
+      "left": 153.6,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 150.2,
+      "left": 153.6,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    { "type": "wokwi-photoresistor-sensor", "id": "ldr1", "top": 32, "left": -248.8, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": 125, "left": -230.4, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3", "dht1:VCC", "red", [ "h0" ] ],
+    [ "esp:15", "dht1:SDA", "green", [ "v0", "h33.64", "v-201.6", "h-144", "v67.2", "h-28.8" ] ],
+    [
+      "esp:GND.2",
+      "dht1:GND",
+      "black",
+      [ "v0", "h14.44", "v-38.4", "h-115.2", "v19.2", "h-9.6", "v38.4", "h-9.6" ]
+    ],
+    [ "esp:18", "btn1:1.l", "green", [ "h19.2", "v-38.4" ] ],
+    [ "esp:GND.3", "btn1:2.r", "black", [ "h9.6", "v-38.4", "h134.4", "v38.4" ] ],
+    [ "esp:19", "btn2:1.l", "green", [ "h28.8", "v19.2" ] ],
+    [ "esp:GND.1", "btn2:2.r", "black", [ "h-9.45", "v67.2", "h268.8", "v-9.6" ] ],
+    [ "esp:21", "btn3:1.l", "green", [ "h48", "v86.4" ] ],
+    [ "esp:GND.1", "btn3:2.r", "black", [ "h-9.45", "v57.6", "h249.6", "v-28.8" ] ],
+    [ "esp:3V3", "ldr1:VCC", "red", [ "h-9.45", "v28.8" ] ],
+    [
+      "esp:GND.2",
+      "ldr1:GND",
+      "black",
+      [ "v0", "h19.2", "v-48", "h-105.6", "v28.8", "h-19.2", "v48" ]
+    ],
+    [ "esp:34", "ldr1:DO", "green", [ "h0" ] ],
+    [ "esp:34", "ldr1:AO", "green", [ "h-9.45", "v9.6" ] ],
+    [ "esp:5V", "relay1:VCC", "red", [ "h-259.05", "v-57.6", "h-9.6" ] ],
+    [ "esp:GND.3", "relay1:GND", "black", [ "h19.2", "v134.4", "h-364.8", "v-67.2" ] ],
+    [ "esp:23", "relay1:IN", "green", [ "h28.8", "v192", "h-364.8", "v-67.2" ] ]
+  ],
+  "dependencies": {}
+}

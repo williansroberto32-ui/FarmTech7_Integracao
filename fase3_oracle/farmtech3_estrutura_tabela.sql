@@ -1,0 +1,12 @@
+-- FARMTECH SOLUTIONS - FASE 3
+-- Estrutura da tabela de sensores
+-- Script para documentacao
+-- ATENCAO: a tabela ja existe no Oracle
+
+CREATE TABLE TB_SENSOR_DADOS (
+    ID_SENSOR NUMBER(5,0) PRIMARY KEY,
+    TIPO_SENSOR VARCHAR2(30),
+    VALOR_MEDICAO NUMBER(10,2) NOT NULL,
+    UNIDADE_MEDIDA CHAR(5) NOT NULL,
+    DATA_COLETA TIMESTAMP(6)
+);

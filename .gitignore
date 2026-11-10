@@ -1,0 +1,13 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+*.pem
+credentials
+credentials.json
+*.ppk
+.aws/
+.streamlit/secrets.toml
